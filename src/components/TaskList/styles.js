@@ -9,8 +9,12 @@ const styles = (theme) => ({
         marginRight: "1rem",
         color: theme.shape.textColor
     },
-    card : {
-        
+    floatBtn : {
+        display: "flex",
+        justifyContent : "flex-end",
+    },
+    icon : {
+        fontSize : "1.25rem"
     }
 });
 export default styles;
