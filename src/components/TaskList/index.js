@@ -21,7 +21,7 @@ class TaskList extends Component {
                         return (
                             <Card key={index}>
                                 <CardContent>
-                                    <TaskItem title={tasks.title} label={this.props.label} />
+                                    <TaskItem description={tasks.description} title={tasks.title} label={this.props.label} />
                                 </CardContent>
                                 <CardActions className={classes.floatBtn}>
                                     <Fab size="small" color="primary" aria-label="edit">

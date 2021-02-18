@@ -4,6 +4,9 @@ import { withStyles } from "@material-ui/styles";
 import Grid from '@material-ui/core/Grid';
 import TaskList from './../../components/TaskList/index';
 import { STATUSES } from './../../constants/index';
+import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+import TaskForm from './../../components/TaskForm/index';
 const listTask = [
     {
         id: 1,
@@ -25,6 +28,12 @@ const listTask = [
     },
 ];
 class TaskBoard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false
+        }
+    }
     renderBoard = () => {
         var { classes } = this.props;
         console.log(classes);
@@ -43,11 +52,29 @@ class TaskBoard extends Component {
         );
         return xhtml;
     }
+    onOpenDialog = () => {
+        this.setState({
+            open: true
+        });
+    }
+    onOpenDialogFromTaskForm = (data) => {
+        if (data === 0) {
+            this.setState({
+                open: false
+            });
+        }
+    }
     render() {
         console.log(this.props);
         var { classes } = this.props;
         return (
             <div>
+                <Button variant="contained" color="primary" onClick={this.onOpenDialog}>
+                    <AddIcon /> Thêm mới công việc
+                </Button>
+
+
+
                 <div className={classes.box}>
                     <div className={classes.shape}>ReactJS</div>
                     <div className={classes.shape}>AngularJS</div>
@@ -57,6 +84,12 @@ class TaskBoard extends Component {
 
 
                 { this.renderBoard()}
+
+
+
+                <TaskForm
+                    onOpenDialogFromTaskForm={this.onOpenDialogFromTaskForm}
+                    open={this.state.open} />
             </div>
         );
     }

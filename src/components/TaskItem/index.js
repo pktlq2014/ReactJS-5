@@ -13,6 +13,9 @@ class TaskItem extends Component {
                 <Grid item md={4}>
                     {this.props.label}
                 </Grid>
+                <Grid item md={12}>
+                    {this.props.description}
+                </Grid>
             </Grid>
 
         );

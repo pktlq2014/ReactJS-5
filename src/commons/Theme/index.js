@@ -13,6 +13,6 @@ const theme = createMuiTheme({
         backgroundColor: "#7B1FA2",
         textColor: "#FFFFFF",
         border: "#CCCCCC"
-    }
+    },
 });
 export default theme;
