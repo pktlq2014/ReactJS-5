@@ -26,6 +26,8 @@ const reducer = (state = initialState, action) => {
             //     ...state,
             //     listTask: [],
             // };
+            const {error} = action.payload;
+            toasterror(error);
             return state;
         }
         default : return state;
